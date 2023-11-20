@@ -11,7 +11,7 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
                 throw new Error('Network response was not ok');
             }
             const result = await response.json();
-            return result.data.players; // Update here
+            return result.data.players; 
         } catch (err) {
             console.error('Uh oh, trouble fetching players!', err);
         }
@@ -25,7 +25,7 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
                 throw new Error('Network response was not ok');
             }
             const result = await response.json();
-            return result.data.player; // Update here
+            return result.data.player; 
         } catch (err) {
             console.error(`Oh no, trouble fetching player #${playerId}!`, err);
         }
@@ -41,9 +41,9 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
                 },
                 body: JSON.stringify({
                     name: playerObj.name,
-                    breed: playerObj.breed, // Add breed
-                    status: playerObj.status || 'bench', // Add status
-                    imageUrl: playerObj.imageUrl // Add imageUrl
+                    breed: playerObj.breed, 
+                    status: playerObj.status || 'bench',
+                    imageUrl: playerObj.imageUrl 
                 }),
             });
             if (!response.ok) {
